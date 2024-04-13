@@ -57,7 +57,7 @@ pipeline{
         stage("stage: 5 Nexus upload"){
             steps{
                 // change to your nexus generated syntax
-                nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/second-pipeline-job/target/web-app.war', type: 'war']], credentialsId: 'nexus-id', groupId: 'com.mt', nexusUrl: '3.129.149.111:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: 'RELEASE'
+                nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/second-pipeline-job/target/web-app.war', type: 'war']], credentialsId: 'sonanexus-id', groupId: 'com.mt', nexusUrl: '3.129.149.111:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: 'RELEASE'
 
             }
         }
