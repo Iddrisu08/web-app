@@ -57,14 +57,14 @@ pipeline{
         stage("stage: 5 Nexus upload"){
             steps{
                 // change to your nexus generated syntax
-                nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/second-pipeline-job/target/web-app.war', type: 'war']], credentialsId: 'nexus-id', groupId: 'com.mt', nexusUrl: '54.173.139.27:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: 'RELEASE'
+                nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/second-pipeline-job/target/web-app.war', type: 'war']], credentialsId: 'nexus-id', groupId: 'com.mt', nexusUrl: '3.129.149.111:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: 'RELEASE'
 
             }
         }
 
         stage("stage: 6 deploy to tomcat"){
             steps{
-                deploy adapters: [tomcat9(credentialsId: 'tomcat-id', path: '', url: 'http://52.91.34.214:8080/')], contextPath: null, war: 'target/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat-id', path: '', url: 'http://18.116.24.58:8080/')], contextPath: null, war: 'target/*.war'
             }
         }
 
